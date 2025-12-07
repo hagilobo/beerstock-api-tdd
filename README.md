@@ -1,56 +1,35 @@
-<h2>Digital Innovation: Expert class - Desenvolvimento de testes unitários para validar uma API REST de gerenciamento de estoques de cerveja.</h2>
+# 🍺 Beer Stock REST API (TDD)
 
-Nesta live coding, vamos aprender a testar, unitariamente, uma API REST para o gerenciamento de estoques de cerveja. Vamos desenvolver testes unitários para validar o nosso sistema de gerenciamento de estoques de cerveja, e também apresentar os principais conceitos e vantagens de criar testes unitários com JUnit e Mockito. Além disso, vamos também mostrar como desenvolver funcionalidades da nossa API através da prática do TDD.
+Projeto desenvolvido como parte do programa **Expert Class da Digital Innovation One (DIO)**, focado na aplicação prática do **Test-Driven Development (TDD)** e no desenvolvimento de testes unitários e de integração para APIs REST em Java.
 
-Durante a sessão, serão abordados os seguintes tópicos:
+Este projeto representa a **solução completa** do desafio de gerenciar um estoque de cervejas (Beer Stock), comprovada por uma suíte de 30 testes.
 
-* Baixar um projeto através do Git para desenolver nossos testes unitários. 
-* Apresentação conceitual sobre testes: a pirâmide dos tipos de testes, e também a importância de cada tipo de teste durante o ciclo de desenvolvimento.
-* Foco nos testes unitários: mostrar o porque é importante o desenvolvimento destes tipos de testes como parte do ciclo de desenvolvimento de software.
-* Principais frameworks para testes unitários em Java: JUnit, Mockito e Hamcrest. 
-* Desenvolvimento de testes unitários para validação de funcionalides básicas: criação, listagem, consulta por nome e exclusão de cervejas.
-* TDD: apresentação e exemplo prático em 2 funcionaliades importantes: incremento e decremento do número de cervejas no estoque.
+## ✨ Destaques e Funcionalidades
 
-Para executar o projeto no terminal, digite o seguinte comando:
+O desenvolvimento seguiu rigorosamente o ciclo **Vermelho-Verde-Refatorar** do TDD, garantindo a robustez das regras de negócio.
 
-```shell script
-mvn spring-boot:run 
-```
+* **API RESTful:** Endpoints para gerenciamento completo do recurso `Beer`.
+* **CRUD Básico:** Implementação das operações de **Criação**, **Listagem**, **Busca por Nome** e **Exclusão** de cervejas.
+* **Gestão de Estoque (TDD):** Implementação das operações **`PATCH`** para:
+    * **Incremento de Estoque:** Valida o estoque máximo da cerveja (`BeerStockExceededException`).
+    * **Decremento de Estoque:** Garante que o estoque não se torne negativo, lançando exceção se a quantidade for insuficiente.
+* **Tratamento de Exceções:** Validação de erros de negócio, como cerveja já registrada, estoque excedido e cerveja não encontrada.
 
-Para executar a suíte de testes desenvolvida durante a live coding, basta executar o seguinte comando:
+## 🛠️ Tecnologias e Testes
 
-```shell script
+| Categoria | Tecnologia | Uso |
+| :--- | :--- | :--- |
+| **Linguagem** | Java 14+ | Linguagem principal de desenvolvimento. |
+| **Framework** | Spring Boot | Facilita a criação de APIs REST. |
+| **Persistência** | Spring Data JPA / H2 | Banco de dados em memória para testes e desenvolvimento. |
+| **Testes Unitários** | **JUnit 5 & Mockito** | Testes de unidade e mocks para a camada de Serviço (`BeerService`). |
+| **Testes de Integração** | **MockMvc** | Simulação de chamadas HTTP para validar a camada Controller. |
+
+## 🚀 Como Executar e Validar
+
+### 1. Testar o Projeto (Comprovação)
+
+Para executar a suíte completa de **30 testes** (unitários e de integração) e comprovar a funcionalidade do código, utilize o comando:
+
+```bash
 mvn clean test
-```
-
-Após executar o comando acima, basta apenas abrir o seguinte endereço e visualizar a execução do projeto:
-
-```
-http://localhost:8080/api/v1/beers
-```
-
-São necessários os seguintes pré-requisitos para a execução do projeto desenvolvido durante a aula:
-
-* Java 14 ou versões superiores.
-* Maven 3.6.3 ou versões superiores.
-* Intellj IDEA Community Edition ou sua IDE favorita.
-* Controle de versão GIT instalado na sua máquina.
-* Muita vontade de aprender e compartilhar conhecimento :)
-
-Abaixo, seguem links bem bacanas, sobre tópicos mencionados durante a aula:
-
-* [SDKMan! para gerenciamento e instalação do Java e Maven](https://sdkman.io/)
-* [Referência do Intellij IDEA Community, para download](https://www.jetbrains.com/idea/download)
-* [Palheta de atalhos de comandos do Intellij](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
-* [Site oficial do Spring](https://spring.io/)
-* [Site oficial JUnit 5](https://junit.org/junit5/docs/current/user-guide/)
-* [Site oficial Mockito](https://site.mockito.org/)
-* [Site oficial Hamcrest](http://hamcrest.org/JavaHamcrest/)
-* [Referências - testes em geral com o Spring Boot](https://www.baeldung.com/spring-boot-testing)
-* [Referência para o padrão arquitetural REST](https://restfulapi.net/)
-* [Referência pirâmide de testes - Martin Fowler](https://martinfowler.com/articles/practical-test-pyramid.html#TheImportanceOftestAutomation)
-
-[Neste link](https://drive.google.com/file/d/1KPh19mvyKirorOI-UsEYHKkmZpet3Ks6/view?usp=sharing), seguem os slides apresentados como o roteiro utilizado para o desenvolvimento do projeto da nossa sessão.
-
-
-
